@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:id="@+id/linearLayout">
+
     <TextView
         android:id="@+id/crime_title"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Crime Title"/>
+        android:text="Crime Title"
+        tools:layout_conversion_absoluteHeight="19dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_conversion_absoluteWidth="68dp" />
+
     <TextView
         android:id="@+id/crime_date"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Crime Date"/>
-</LinearLayout>
+        android:text="Crime Date"
+        tools:layout_conversion_absoluteHeight="19dp"
+        tools:layout_editor_absoluteY="27dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_conversion_absoluteWidth="70dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

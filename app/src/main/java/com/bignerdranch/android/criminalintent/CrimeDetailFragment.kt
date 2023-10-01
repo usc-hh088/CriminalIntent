@@ -47,6 +47,7 @@ class CrimeDetailFragment : Fragment() {
             }
 
             crimeDate.apply {
+                //03/10 ask
                 text = android.text.format.DateFormat.format("EEEE, MMMM dd, yyyy", crime.date).toString()
 
                 isEnabled = false

@@ -25,7 +25,8 @@ class CrimeDetailFragment : Fragment() {
             id = UUID.randomUUID(),
             title = "",
             date = Date(),
-            isSolved = false
+            isSolved = false,
+            requestPolice = false
         ) }
 
     override fun onCreateView(
@@ -46,7 +47,8 @@ class CrimeDetailFragment : Fragment() {
             }
 
             crimeDate.apply {
-                text = crime.date.toString()
+                text = android.text.format.DateFormat.format("EEEE, MMMM dd, yyyy", crime.date).toString()
+
                 isEnabled = false
             }
 

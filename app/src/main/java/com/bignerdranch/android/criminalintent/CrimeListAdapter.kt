@@ -12,7 +12,7 @@ class CrimeHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
     fun bind(crime: Crime) {
         binding.crimeTitle.text = crime.title
-        //0310 ask
+
         binding.crimeDate.text = android.text.format.DateFormat.format("EEEE, MMMM dd, yyyy", crime.date).toString()
 
         binding.root.setOnClickListener {

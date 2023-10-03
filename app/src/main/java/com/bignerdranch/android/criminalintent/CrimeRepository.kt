@@ -1,11 +1,30 @@
 package com.bignerdranch.android.criminalintent
 
-import org.junit.runner.manipulation.Ordering
+import android.content.Context
+import androidx.room.Room
+import com.bignerdranch.android.criminalintent.database.CrimeDatabase
 
-class CrimeRepository private constructor(context: Ordering.Context) {
+
+import java.util.UUID
+
+private const val DATABASE_NAME = "crime-database"
+class CrimeRepository private constructor(context: Context) {
+
+    private val database: CrimeDatabase = Room.databaseBuilder(
+            context.applicationContext,
+            CrimeDatabase::class.java,
+            DATABASE_NAME
+        )  .createFromAsset(DATABASE_NAME)
+        .build()
+
+
+    suspend fun getCrimes(): List<Crime> = database.crimeDao().getCrimes()
+    suspend fun getCrime(id: UUID): Crime = database.crimeDao().getCrime(id)
+
+
     companion object {
         private var INSTANCE: CrimeRepository? = null
-        fun initialize(context: CriminalIntentApplication.CriminalIntentApplication) {
+        fun initialize(context: Context) {
             if (INSTANCE == null) {
                 INSTANCE = CrimeRepository(context)
             }

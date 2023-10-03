@@ -1,4 +1,4 @@
-package database
+package com.bignerdranch.android.criminalintent.database
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
@@ -7,7 +7,7 @@ import androidx.room.TypeConverters
 import com.bignerdranch.android.criminalintent.Crime
 import java.util.Date
 
-class CrimeDatabase {
+
     //a list of entity classes
     @Database(entities = [ Crime::class ], version=1)
     //tell your database to use the functions in that class when converting your types
@@ -27,4 +27,3 @@ class CrimeDatabase {
             return Date(millisSinceEpoch)
         }
     }
-}

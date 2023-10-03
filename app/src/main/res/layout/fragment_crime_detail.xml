@@ -20,7 +20,6 @@
         android:textAppearance="?attr/textAppearanceHeadline5"
         android:text="@string/crime_details_label" />
     <Button
-        android:id="@+id/crime_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Wed May 11 11:56 EST 2022" />
